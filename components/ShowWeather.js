@@ -56,11 +56,11 @@ export default class ShowWeather extends Component {
                                 <Text style={styles.headerText}>{parseFloat(this.state.currentWeather.main.temp).toFixed(1)}°</Text>
                                 <View style={{ flex: 1, justifyContent: "space-between", flexDirection: "row" }}>
                                     <View style={{flex: 1, alignItems: "center"}}>
-                                        <Text>Min </Text>
+                                        <Text style={{color: "white"}}>Min </Text>
                                         <Text style={{ color: "white" }}>{parseFloat(this.state.currentWeather.main.temp_min).toFixed(1)}°</Text>
                                     </View>
                                     <View style={{flex: 1, alignItems: "center"}}>
-                                        <Text >Max</Text>
+                                        <Text style={{color: "white"}}>Max</Text>
                                         <Text style={{ color: "white" }}>{parseFloat(this.state.currentWeather.main.temp_max).toFixed(1)}°</Text>
                                     </View>
                                 </View>
