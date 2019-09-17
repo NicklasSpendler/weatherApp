@@ -1,21 +1,36 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 import ShowWeather from './components/ShowWeather'
+import AddWeather from './components/AddWeather'
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.backgroundGradient}>
-        <ShowWeather />
-      </View>
-    )
+const RootStack = createStackNavigator(
+  {
+    Home: { screen: ShowWeather },
+    addWeather: { screen: AddWeather }
+  },
+  {
+    initialRouteName: 'Home',
+    headerMode: 'none',
   }
-}
+  
+)
 
-const styles = StyleSheet.create({
-  backgroundGradient:{
-    backgroundImage: "linear-gradient(21deg, rgba(255,255,255,1) 0%, rgba(0,117,255,1) 48%)",
-    height: "100vh"
-  }
-})
+export default createAppContainer(RootStack)
+
+// const AppContainer = createAppContainer(RootStack)
+
+
+
+// export default class App extends Component {
+
+//   render() {
+//     return (
+//       <View>
+//         <AppContainer />
+//       </View>
+//     )
+//   }
+// }
